@@ -1,0 +1,17 @@
+<div class="col-md-4" *ngFor = "let game of games">
+  <div class="card text-center">
+    
+    <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+      {{ game.title }}
+      <button class="btn btn-danger" (click)="deleteGame(game.id)">Eliminar</button>
+    </div>
+
+    <img [src]="game.image" alt="{{ game.title }}" class="card-img-top">
+
+    <div class="card-body">
+      <p>{{ game.description }}</p>
+      <!-- (click)="editGame(game.id)" esto ya no es necesario -->
+      <a [routerLink]="['/games/edit', game.id]" class="btn btn-info btn-block">Editar</a>
+    </div>
+  </div>
+</div> 
